@@ -10,8 +10,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="3"
-        android:id="@+id/button"
+        android:text="-0.5"
+        android:id="@+id/btnF1sendHalf"
         android:maxWidth="80dp"
         android:minHeight="80dp"
         android:textAlignment="center"
@@ -26,7 +26,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="3"
+        android:text="-0.5"
         android:id="@+id/btnF2sendHalf"
         android:textSize="30sp"
         android:maxWidth="80dp"
@@ -40,7 +40,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="2"
+        android:text="-1"
         android:id="@+id/btnF2send1"
         android:textSize="30sp"
         android:maxWidth="80dp"
@@ -55,7 +55,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="2"
+        android:text="-1"
         android:id="@+id/btnF1send1"
         android:textSize="30sp"
         android:maxWidth="80dp"
@@ -69,7 +69,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1"
+        android:text="0"
         android:id="@+id/btnF2set0"
         android:textSize="30sp"
         android:maxWidth="80dp"
@@ -82,7 +82,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1"
+        android:text="0"
         android:id="@+id/btnF1set0"
         android:textSize="30sp"
         android:maxWidth="80dp"
