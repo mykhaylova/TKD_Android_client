@@ -15,18 +15,16 @@
         android:text="Proceed"
         android:id="@+id/btnLogin"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_gravity="bottom" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/etName"
-        android:editable="true"
-        android:enabled="true"
-        android:hint="Enter referee ID"
-        android:layout_above="@+id/tvNetwork"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Network setup"
+        android:id="@+id/tvNetwork"
+        android:layout_above="@+id/etIpAddress"
         android:layout_alignParentStart="true" />
 
     <TextView
@@ -44,17 +42,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Register"
         android:id="@+id/tvName"
-        android:layout_alignParentStart="true"
-        android:layout_above="@+id/etName"
-        android:layout_alignEnd="@+id/tvNetwork" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Network setup"
-        android:id="@+id/tvNetwork"
-        android:layout_centerVertical="true"
+        android:layout_above="@+id/sDropdown"
         android:layout_alignParentStart="true" />
 
     <EditText
@@ -64,7 +52,21 @@
         android:enabled="true"
         android:editable="true"
         android:hint="192.168.1.0"
-        android:layout_below="@+id/tvNetwork"
-        android:layout_alignParentStart="true" />
+        android:layout_above="@+id/btnLogin"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="22dp" />
+
+    <Spinner
+        android:layout_width="70pt"
+        android:layout_height="20pt"
+        android:id="@+id/sDropdown"
+        android:entries="@array/user_name"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:clickable="true"
+        android:contextClickable="true"
+        android:layout_above="@+id/tvNetwork"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="22dp" />
 
 </RelativeLayout>

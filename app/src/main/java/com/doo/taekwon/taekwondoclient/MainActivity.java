@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         Button send1Button3Points = (Button)findViewById(R.id.button);
 
         // Button getButton = (Button)findViewById(R.id.btnGetPoints);
-        final EditText etIpAddress = (EditText)findViewById(R.id.textIP);
+        //final EditText etIpAddress = (EditText)findViewById(R.id.textIP);
         final EditText etName = (EditText)findViewById(R.id.etName);
 
         Bundle extras = getIntent().getExtras();
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             mName = extras.getString("name");
             etName.setText(mName);
             mServerIP = extras.getString("ip");
-            etIpAddress.setText(mServerIP);
+            //etIpAddress.setText(mServerIP);
         }
 
         final Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);

@@ -1,6 +1,12 @@
 <resources>
-    <string name="app_name">TaekwondoClient</string>
+    <string name="app_name">TaekwonDo App</string>
     <string name="title_activity_login">Sign in</string>
+    <string-array name="user_name">
+        <item>referee1</item>
+        <item>referee2</item>
+        <item>referee3</item>
+        <item>referee4</item>
+    </string-array>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>

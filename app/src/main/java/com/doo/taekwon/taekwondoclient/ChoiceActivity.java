@@ -34,12 +34,12 @@ public class ChoiceActivity extends AppCompatActivity {
             }
         });
 
-        btnTul.setOnClickListener(new View.OnClickListener() {
+       /* btnTul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent loginIntent = new Intent(ChoiceActivity.this, TulActivity.class);
                 ChoiceActivity.this.startActivity(loginIntent);
             }
-        });
+        });*/
     }
 }

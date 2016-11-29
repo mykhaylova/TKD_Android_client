@@ -7,8 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 public class LoginActivity extends AppCompatActivity {
     private String mName = null;
@@ -22,6 +25,21 @@ public class LoginActivity extends AppCompatActivity {
         final EditText etName = (EditText) findViewById(R.id.etName);
         final EditText etIpAddress = (EditText) findViewById(R.id.etIpAddress);
         final Button btnLogin = (Button) findViewById(R.id.btnLogin);
+        final Spinner sDropdownSpinner = (Spinner)findViewById(R.id.sDropdown);
+
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.user_name,android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sDropdownSpinner.setAdapter(adapter);
+
+        sDropdownSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+               mName = (String)parent.getItemAtPosition(position);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -34,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
             } else
             {
                 AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-                builder.setMessage("Please enter your name and network address!")
+                builder.setMessage("Please enter username and network address!")
                         .setNegativeButton("Retry", null)
                         .create()
                         .show();
@@ -42,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
         }
         });
 
-        etName.addTextChangedListener(new TextWatcher() {
+        /*etName.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged (CharSequence s,int start, int count, int after){
             }
@@ -57,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
 
-        );
+        );*/
 
 
         etIpAddress.addTextChangedListener(new TextWatcher() {
