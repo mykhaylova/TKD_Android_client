@@ -30,13 +30,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button send1Button1Point = (Button)findViewById(R.id.btnF1set0);
+         Button send1Button3Points = (Button)findViewById(R.id.button);
+
+        // Button getButton = (Button)findViewById(R.id.btnGetPoints);
         Button send2Button1Point = (Button)findViewById(R.id.btnF2set0);
         Button send1Button2Points = (Button)findViewById(R.id.btnF1send1);
         Button send2Button2Points = (Button)findViewById(R.id.btnF2send1);
         Button send2Button3Points = (Button)findViewById(R.id.btnF2sendHalf);
-        Button send1Button3Points = (Button)findViewById(R.id.button);
-
-        // Button getButton = (Button)findViewById(R.id.btnGetPoints);
         //final EditText etIpAddress = (EditText)findViewById(R.id.textIP);
         final EditText etName = (EditText)findViewById(R.id.etName);
 
@@ -113,6 +113,12 @@ public class MainActivity extends AppCompatActivity {
             //}
         //});
 
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//
+//                //ip.setText(mServerIP);
+//            }
+//        });
 
 
         //etIpAddress.addTextChangedListener(new TextWatcher() {
@@ -126,12 +132,6 @@ public class MainActivity extends AppCompatActivity {
 
             //}
 
-//            @Override
-//            public void afterTextChanged(Editable s) {
-//
-//                //ip.setText(mServerIP);
-//            }
-//        });
     }
 
     private class PointsReader extends AsyncTask<Void, Void, Void>
