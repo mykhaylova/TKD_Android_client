@@ -1,6 +1,7 @@
 package com.doo.taekwon.taekwondoclient;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -38,7 +40,9 @@ public class MainActivity extends AppCompatActivity {
         Button send2Button2Points = (Button)findViewById(R.id.btnF2send1);
         Button send2Button3Points = (Button)findViewById(R.id.btnF2sendHalf);
         //final EditText etIpAddress = (EditText)findViewById(R.id.textIP);
-        final EditText etName = (EditText)findViewById(R.id.etName);
+        Button buttonMenu = (Button) findViewById(R.id.btnMenu);
+
+        final TextView etName = (TextView)findViewById(R.id.etName);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -49,23 +53,23 @@ public class MainActivity extends AppCompatActivity {
         }
 
         final Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        send1Button1Point.setOnClickListener(new View.OnClickListener() {
+    /*    send1Button1Point.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PointsSender sender = new PointsSender();
                 sender.execute(mName, "fighter1", "1");
                 vibe.vibrate(160);
             }
-        });
+        });   */
 
-        send2Button1Point.setOnClickListener(new View.OnClickListener() {
+    /*    send2Button1Point.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PointsSender sender = new PointsSender();
                 sender.execute(mName, "fighter2", "1");
                 vibe.vibrate(160);
             }
-        });
+        });      */
 
         send1Button2Points.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,7 +107,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        buttonMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Intent activityIntent = new Intent(MainActivity.this, ChoiceActivity.class);
+                //activityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                //startActivity(activityIntent);
+                finish();
+                vibe.vibrate(220);
+            }
+        });
 
         //getButton.setOnClickListener(new View.OnClickListener() {
           //  @Override

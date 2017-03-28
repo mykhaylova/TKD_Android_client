@@ -1,6 +1,7 @@
 package com.doo.taekwon.taekwondoclient;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -24,6 +26,7 @@ public class TulActivity extends AppCompatActivity {
     private String mServerPort = "8080";
     private String mServerIP = null;
     private String mName = null;
+    private String mIpAddress = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +40,10 @@ public class TulActivity extends AppCompatActivity {
         Button send1ButtonHalfPoints = (Button)findViewById(R.id.btnF1sendHalf);
         Button send2ButtonHalfPoints = (Button)findViewById(R.id.btnF2sendHalf);
 
-        final EditText etIpAddress = (EditText)findViewById(R.id.textIP);
-        final EditText etName = (EditText)findViewById(R.id.etName);
+        final Button buttonLevel1 = (Button)findViewById(R.id.btnLevel1);
+        Button buttonMenu = (Button) findViewById(R.id.btnMenu);
+        //final EditText etIpAddress = (EditText)findViewById(R.id.textIP);
+        final TextView etName = (TextView)findViewById(R.id.etName);
         final Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
         Bundle extras = getIntent().getExtras();
@@ -46,7 +51,7 @@ public class TulActivity extends AppCompatActivity {
             mName = extras.getString("name");
             etName.setText(mName);
             mServerIP = extras.getString("ip");
-            etIpAddress.setText(mServerIP);
+           // etIpAddress.setText(mServerIP);
         }
 
         send1Button0Points.setOnClickListener(new View.OnClickListener() {
@@ -100,6 +105,28 @@ public class TulActivity extends AppCompatActivity {
                 PointsSender sender = new PointsSender();
                 sender.execute("fighter2", "0.5");
                 vibe.vibrate(160);
+            }
+        });
+
+        buttonMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Intent activityIntent = new Intent(TulActivity.this, ChoiceActivity.class);
+                //activityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                //startActivity(activityIntent);
+                finish();
+                vibe.vibrate(220);
+            }
+        });
+
+        buttonLevel1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent levelTwo = new Intent(TulActivity.this, TulLevel2Activity.class);
+                levelTwo.putExtra("name", mName);
+                levelTwo.putExtra("ip", mIpAddress);
+                TulActivity.this.startActivity(levelTwo);
+                vibe.vibrate(220);
             }
         });
     }

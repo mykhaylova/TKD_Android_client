@@ -4,12 +4,12 @@
       <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$USER_HOME$/.android/build-cache/7f268e1ef65835ce8e53185f75f33e5f2af5613f/output/res" />
-      <root url="jar://$USER_HOME$/.android/build-cache/7f268e1ef65835ce8e53185f75f33e5f2af5613f/output/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.android/build-cache/396800b34d39e5527db0977cfc10d142fda5dd47/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/396800b34d39e5527db0977cfc10d142fda5dd47/output/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/AppData/Local/Android/sdk1/extras/android/m2repository/com/android/support/design/23.1.1/design-23.1.1-sources.jar!/" />
+      <root url="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/design/23.1.1/design-23.1.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
