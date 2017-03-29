@@ -22,7 +22,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        final EditText etName = (EditText) findViewById(R.id.etName);
         final EditText etIpAddress = (EditText) findViewById(R.id.etIpAddress);
         final Button btnLogin = (Button) findViewById(R.id.btnLogin);
         final Spinner sDropdownSpinner = (Spinner)findViewById(R.id.sDropdown);
@@ -59,24 +58,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
         });
-
-        /*etName.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged (CharSequence s,int start, int count, int after){
-            }
-
-            @Override
-            public void onTextChanged (CharSequence s,int start, int before, int count){
-            }
-
-            @Override
-            public void afterTextChanged (Editable s){
-                mName = etName.getText().toString();
-            }
-        }
-
-        );*/
-
 
         etIpAddress.addTextChangedListener(new TextWatcher() {
             @Override

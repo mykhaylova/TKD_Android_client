@@ -24,11 +24,11 @@ public class TulLevel2Activity extends AppCompatActivity {
         final Button buttonLevel3 = (Button) findViewById(R.id.btnLevel3);
 
         Button send1Button0Points = (Button)findViewById(R.id.btnF2set0);
-        Button send2Button0Points = (Button)findViewById(R.id.btnF2send1);
-        Button send1Button1Point = (Button)findViewById(R.id.btnF1set0);
-        Button send2Button1Point = (Button)findViewById(R.id.btnF1sendHalf);
+        Button send2Button0Points = (Button)findViewById(R.id.btnRedPlusPoints);
+        Button send1Button1Point = (Button)findViewById(R.id.btnBlueMinusPoints);
+        Button send2Button1Point = (Button)findViewById(R.id.btnBluePlusPoints);
 
-        final TextView etName = (TextView)findViewById(R.id.etName);
+        final TextView etName = (TextView)findViewById(R.id.etReferee);
         final Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
         Bundle extras = getIntent().getExtras();

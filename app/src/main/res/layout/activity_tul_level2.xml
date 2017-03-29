@@ -8,6 +8,107 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.doo.taekwon.taekwondoclient.TulLevel2Activity">
+    tools:context="com.doo.taekwon.taekwondoclient.TulLevel2Activity"
+    android:background="@color/common_signin_btn_dark_text_disabled">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+0.5"
+        android:id="@+id/btnRedPlusPoints"
+        android:textSize="30sp"
+        android:maxWidth="80dp"
+        android:minHeight="80dp"
+        android:width="130dp"
+        android:background="@drawable/buttonred"
+        android:drawableTint="@drawable/abc_btn_borderless_material"
+        android:textColor="#ffffff"
+        android:layout_alignParentBottom="true"
+
+        />
+
+    <Button
+        android:layout_width="240dp"
+        android:layout_height="220dp"
+        android:text="-0.5"
+        android:id="@+id/btnF2set0"
+        android:textSize="90sp"
+        android:maxWidth="80dp"
+        android:minHeight="80dp"
+        android:background="@drawable/buttonred"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:layout_width="60pt"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/etReferee"
+        android:background="@android:color/white"
+        android:hint="Name"
+        android:elegantTextHeight="true"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+0.5"
+        android:id="@+id/btnBluePlusPoints"
+        android:maxWidth="80dp"
+        android:minHeight="80dp"
+        android:textSize="30sp"
+        android:width="130dp"
+        android:background="@drawable/buttonblue"
+        android:textColor="#ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Level 1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnLevel1"
+        android:textSize="30sp"
+        android:maxWidth="80dp"
+        android:minHeight="80dp"
+        android:width="130dp"
+        android:textColor="#ffffff"
+        android:background="@drawable/buttonbluelight"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Level 3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etReferee"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:id="@+id/btnLevel3"
+        android:textSize="30sp"
+        android:maxWidth="80dp"
+        android:minHeight="80dp"
+        android:width="130dp"
+        android:textColor="#ffffff"
+        android:background="@drawable/buttonbluelight"/>
+
+    <Button
+        android:layout_width="240dp"
+        android:layout_height="220dp"
+        android:text="-0.5"
+        android:id="@+id/btnBlueMinusPoints"
+        android:textSize="90sp"
+        android:maxWidth="80dp"
+        android:minHeight="80dp"
+        android:background="@drawable/buttonblue"
+        android:textColor="#ffffff"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

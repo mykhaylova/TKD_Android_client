@@ -1,7 +1,6 @@
 package com.doo.taekwon.taekwondoclient;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -9,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -31,78 +29,55 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button send1Button1Point = (Button)findViewById(R.id.btnF1set0);
-         Button send1Button3Points = (Button)findViewById(R.id.button);
-
-        // Button getButton = (Button)findViewById(R.id.btnGetPoints);
-        Button send2Button1Point = (Button)findViewById(R.id.btnF2set0);
-        Button send1Button2Points = (Button)findViewById(R.id.btnF1send1);
-        Button send2Button2Points = (Button)findViewById(R.id.btnF2send1);
-        Button send2Button3Points = (Button)findViewById(R.id.btnF2sendHalf);
-        //final EditText etIpAddress = (EditText)findViewById(R.id.textIP);
+        Button send2Button1Point = (Button)findViewById(R.id.btnBluePlusOne);
+        Button send1Button1Point = (Button)findViewById(R.id.btnRedSetZero);
+        Button send2ButtonMinusPoint = (Button)findViewById(R.id.btnBlueSetZero);
+        Button send1ButtonMinusPoint = (Button)findViewById(R.id.btnRedPlusPoints);
         Button buttonMenu = (Button) findViewById(R.id.btnMenu);
 
-        final TextView etName = (TextView)findViewById(R.id.etName);
+        final TextView etName = (TextView)findViewById(R.id.etReferee);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             mName = extras.getString("name");
             etName.setText(mName);
             mServerIP = extras.getString("ip");
-            //etIpAddress.setText(mServerIP);
         }
 
         final Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-    /*    send1Button1Point.setOnClickListener(new View.OnClickListener() {
+
+        send1Button1Point.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PointsSender sender = new PointsSender();
                 sender.execute(mName, "fighter1", "1");
                 vibe.vibrate(160);
             }
-        });   */
+        });
 
-    /*    send2Button1Point.setOnClickListener(new View.OnClickListener() {
+        send2Button1Point.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PointsSender sender = new PointsSender();
                 sender.execute(mName, "fighter2", "1");
                 vibe.vibrate(160);
             }
-        });      */
+        });
 
-        send1Button2Points.setOnClickListener(new View.OnClickListener() {
+        send1ButtonMinusPoint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PointsSender sender = new PointsSender();
-                sender.execute(mName, "fighter1", "2");
+                sender.execute(mName, "fighter1", "-1");
                 vibe.vibrate(160);
             }
         });
 
-        send2Button2Points.setOnClickListener(new View.OnClickListener() {
+        send2ButtonMinusPoint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PointsSender sender = new PointsSender();
-                sender.execute(mName, "fighter2", "2");
-                vibe.vibrate(160);
-            }
-        });
-
-        send1Button3Points.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PointsSender sender = new PointsSender();
-                sender.execute(mName, "fighter1", "3");
-                vibe.vibrate(160);
-            }
-        });
-
-        send2Button3Points.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PointsSender sender = new PointsSender();
-                sender.execute(mName, "fighter2", "3");
+                sender.execute(mName, "fighter2", "-1");
                 vibe.vibrate(160);
             }
         });
@@ -117,34 +92,6 @@ public class MainActivity extends AppCompatActivity {
                 vibe.vibrate(220);
             }
         });
-
-        //getButton.setOnClickListener(new View.OnClickListener() {
-          //  @Override
-            //public void onClick(View v) {
-              //  PointsReader reader = new PointsReader();
-                //reader.execute();
-            //}
-        //});
-
-//            @Override
-//            public void afterTextChanged(Editable s) {
-//
-//                //ip.setText(mServerIP);
-//            }
-//        });
-
-
-        //etIpAddress.addTextChangedListener(new TextWatcher() {
-          //  @Override
-            //public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            //}
-
-           // @Override
-            //public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            //}
-
     }
 
     private class PointsReader extends AsyncTask<Void, Void, Void>
@@ -154,8 +101,6 @@ public class MainActivity extends AppCompatActivity {
             URL serverUrl = null;
             HttpURLConnection connection = null;
             StringBuilder sb = new StringBuilder();
-
-
             try {
                 //creating the connection to the http server
                 serverUrl = new URL("http://" + mServerIP + ":" + mServerPort + "/count");
@@ -180,18 +125,15 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-
     private class PointsSender extends AsyncTask<String, Void, Void>
     {
         @Override
         protected Void doInBackground(String... params) {
             URL serverUrl = null;
             HttpURLConnection connection = null;
-
             try {
                 Log.d("POST", "POST");
-                //params0 == fighterID, params2 == points
+                //params0 == refereeID, params1 == fighterID, params2 == points
                 String txt =  params[0] + ":" + params[1] + ":" + params[2];
                 byte[] outbuf = txt.getBytes("UTF-8");
 
@@ -208,7 +150,6 @@ public class MainActivity extends AppCompatActivity {
 
                 if (connection.getResponseCode() != HttpURLConnection.HTTP_OK)
                     Log.e("Res", "response code was not OK: " + String.valueOf(connection.getResponseCode()));
-
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (UnsupportedEncodingException e) {
@@ -220,7 +161,5 @@ public class MainActivity extends AppCompatActivity {
             }
             return null;
         }
-
     }
-
 }
