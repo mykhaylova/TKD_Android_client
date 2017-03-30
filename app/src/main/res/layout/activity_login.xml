@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,10 +16,12 @@
         android:layout_height="wrap_content"
         android:text="Proceed"
         android:id="@+id/btnLogin"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
         android:layout_gravity="bottom"
-        android:background="@drawable/buttonbluelight" />
+        android:textColor="#ffffff"
+        android:background="@drawable/buttonbluelight"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/etIpAddress"
+        android:layout_alignStart="@+id/etIpAddress" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -27,7 +30,8 @@
         android:text="Network setup"
         android:id="@+id/tvNetwork"
         android:layout_above="@+id/etIpAddress"
-        android:layout_alignParentStart="true" />
+        android:layout_alignStart="@+id/sDropdown"
+        android:layout_toStartOf="@+id/imageView" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,7 +40,7 @@
         android:text="Welcome!"
         android:id="@+id/tvLogin"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -45,7 +49,7 @@
         android:text="Register"
         android:id="@+id/tvName"
         android:layout_above="@+id/sDropdown"
-        android:layout_alignParentStart="true" />
+        android:layout_alignStart="@+id/sDropdown" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -54,9 +58,10 @@
         android:enabled="true"
         android:editable="true"
         android:hint="192.168.1.0"
+        android:layout_marginBottom="17dp"
         android:layout_above="@+id/btnLogin"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="22dp" />
+        android:layout_alignStart="@+id/tvNetwork"
+        android:layout_toStartOf="@+id/imageView" />
 
     <Spinner
         android:layout_width="70pt"
@@ -67,8 +72,27 @@
         android:spinnerMode="dropdown"
         android:clickable="true"
         android:contextClickable="true"
+        android:layout_marginBottom="19dp"
         android:layout_above="@+id/tvNetwork"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="22dp" />
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:src="@drawable/logoright"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/sDropdown"
+        android:layout_marginStart="36dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="190dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="28dp"
+        android:src="@drawable/logoleft"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
 
 </RelativeLayout>

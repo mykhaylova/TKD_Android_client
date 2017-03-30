@@ -52,11 +52,12 @@ public class ChoiceActivity extends AppCompatActivity {
         });
     }
     public void clickExit(View v){
-        onBackPressed();
+        //onBackPressed();
+        finish();
         final Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         vibe.vibrate(220);
     }
-
+    /*
     @Override
     public void onBackPressed() {
         new AlertDialog.Builder(this)
@@ -69,5 +70,5 @@ public class ChoiceActivity extends AppCompatActivity {
                 })
                 .setNegativeButton("No", null)
                 .show();
-    }
+    }  */
 }

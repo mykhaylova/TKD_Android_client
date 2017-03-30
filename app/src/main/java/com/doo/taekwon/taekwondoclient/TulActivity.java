@@ -1,6 +1,7 @@
 package com.doo.taekwon.taekwondoclient;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -28,7 +29,7 @@ public class TulActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_tul);
 
         Button send2Button1Minus = (Button)findViewById(R.id.btnBlueMinusPoints);
         Button send1ButtonMinus = (Button)findViewById(R.id.btnRedMinusPoints);
@@ -37,6 +38,8 @@ public class TulActivity extends AppCompatActivity {
         Button send2ButtonZero = (Button)findViewById(R.id.btnBlueSetZero);
         Button send1ButtonZero = (Button)findViewById(R.id.btnRedSetZero);
         Button buttonMenu = (Button) findViewById(R.id.btnMenu);
+
+        final Button btnLevel2 = (Button) findViewById(R.id.btnLevel1);
 
         final TextView etName = (TextView)findViewById(R.id.etReferee);
 
@@ -109,6 +112,16 @@ public class TulActivity extends AppCompatActivity {
                 //activityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 //startActivity(activityIntent);
                 finish();
+                vibe.vibrate(220);
+            }
+        });
+
+        btnLevel2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent levelSecond = new Intent(TulActivity.this, TulLevel2Activity.class);
+                levelSecond.putExtra("name", mName);
+                TulActivity.this.startActivity(levelSecond);
                 vibe.vibrate(220);
             }
         });

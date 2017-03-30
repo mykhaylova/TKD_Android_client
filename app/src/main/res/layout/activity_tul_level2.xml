@@ -20,7 +20,7 @@
         android:maxWidth="80dp"
         android:minHeight="80dp"
         android:width="130dp"
-        android:background="@drawable/buttonred"
+        android:background="@drawable/buttonblue"
         android:drawableTint="@drawable/abc_btn_borderless_material"
         android:textColor="#ffffff"
         android:layout_alignParentBottom="true"
@@ -35,7 +35,7 @@
         android:textSize="90sp"
         android:maxWidth="80dp"
         android:minHeight="80dp"
-        android:background="@drawable/buttonred"
+        android:background="@drawable/buttonblue"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:textColor="#ffffff" />
@@ -64,7 +64,7 @@
         android:minHeight="80dp"
         android:textSize="30sp"
         android:width="130dp"
-        android:background="@drawable/buttonblue"
+        android:background="@drawable/buttonred"
         android:textColor="#ffffff"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true" />
@@ -106,7 +106,7 @@
         android:textSize="90sp"
         android:maxWidth="80dp"
         android:minHeight="80dp"
-        android:background="@drawable/buttonblue"
+        android:background="@drawable/buttonred"
         android:textColor="#ffffff"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true" />

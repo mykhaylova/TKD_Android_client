@@ -15,7 +15,7 @@
         android:textSize="30sp"
         android:maxWidth="80dp"
         android:minHeight="80dp"
-        android:background="@drawable/buttonred"
+        android:background="@drawable/buttonblue"
         android:drawableTint="@drawable/abc_btn_borderless_material"
         android:textColor="#ffffff"
         android:layout_alignParentBottom="true"
@@ -28,7 +28,7 @@
         android:layout_height="220dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:background="@drawable/buttonred"
+        android:background="@drawable/buttonblue"
         android:maxWidth="80dp"
         android:minHeight="80dp"
         android:text="-0.2"
@@ -43,7 +43,7 @@
         android:textSize="90sp"
         android:maxWidth="80dp"
         android:minHeight="80dp"
-        android:background="@drawable/buttonblue"
+        android:background="@drawable/buttonred"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:textColor="#ffffff" />
@@ -84,11 +84,11 @@
         android:textSize="30sp"
         android:maxWidth="80dp"
         android:minHeight="80dp"
-        android:background="@drawable/buttonred"
+        android:background="@drawable/buttonblue"
         android:textColor="#ffffff"
+        android:layout_marginStart="9dp"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/btnRedPlusPoints"
-        android:layout_marginStart="11dp" />
+        android:layout_toEndOf="@+id/btnRedPlusPoints" />
 
     <Button
         android:text="B"
@@ -98,7 +98,7 @@
         android:textSize="30sp"
         android:maxWidth="10dp"
         android:minHeight="80dp"
-        android:background="@drawable/buttonred"
+        android:background="@drawable/buttonblue"
         android:textColor="#ffffff"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="5dp"
@@ -113,7 +113,7 @@
         android:maxWidth="80dp"
         android:minHeight="80dp"
         android:textSize="30sp"
-        android:background="@drawable/buttonblue"
+        android:background="@drawable/buttonred"
         android:textColor="#ffffff"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true" />
@@ -126,7 +126,7 @@
         android:textSize="30sp"
         android:maxWidth="80dp"
         android:minHeight="80dp"
-        android:background="@drawable/buttonblue"
+        android:background="@drawable/buttonred"
         android:textColor="#ffffff"
         android:layout_alignParentBottom="true"
         android:layout_toStartOf="@+id/btnBluePlusPoints"
@@ -140,10 +140,10 @@
         android:textSize="30sp"
         android:maxWidth="10dp"
         android:minHeight="80dp"
-        android:background="@drawable/buttonblue"
+        android:background="@drawable/buttonred"
         android:textColor="#ffffff"
         android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/btnBlueSetZero" />
+        android:layout_alignStart="@+id/btnBlueMinusPoints" />
 
     <Button
         android:id="@+id/btnMenu"
