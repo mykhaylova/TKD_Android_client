@@ -1,6 +1,7 @@
 package com.doo.taekwon.taekwondoclient;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -50,8 +51,12 @@ public class TulLevel3Activity extends AppCompatActivity {
         buttonFertig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String item = "Resultat wird an den Server geschickt";
-                Toast.makeText(getApplicationContext(), item, Toast.LENGTH_SHORT).show();
+                //String item = "Resultat wird an den Server geschickt";
+                //Toast.makeText(getApplicationContext(), item, Toast.LENGTH_SHORT).show();
+
+                Intent activityIntent = new Intent(TulLevel3Activity.this, LoginActivity.class);
+                activityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(activityIntent);
                 vibe.vibrate(220);
             }
         });

@@ -37,7 +37,9 @@ public class TulActivity extends AppCompatActivity {
         Button send1ButtonPlus = (Button)findViewById(R.id.btnRedPlusPoints);
         Button send2ButtonZero = (Button)findViewById(R.id.btnBlueSetZero);
         Button send1ButtonZero = (Button)findViewById(R.id.btnRedSetZero);
-        Button buttonMenu = (Button) findViewById(R.id.btnMenu);
+        Button buttonMenu = (Button)findViewById(R.id.btnMenu);
+        Button buttonBackRed = (Button)findViewById(R.id.btnBackRed);
+        Button buttonBackBlue = (Button)findViewById(R.id.btnBackBlue);
 
         final Button btnLevel2 = (Button) findViewById(R.id.btnLevel1);
 
@@ -122,6 +124,21 @@ public class TulActivity extends AppCompatActivity {
                 Intent levelSecond = new Intent(TulActivity.this, TulLevel2Activity.class);
                 levelSecond.putExtra("name", mName);
                 TulActivity.this.startActivity(levelSecond);
+                vibe.vibrate(220);
+            }
+        });
+
+        buttonBackRed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                vibe.vibrate(220);
+            }
+        });
+
+        buttonBackBlue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 vibe.vibrate(220);
             }
         });

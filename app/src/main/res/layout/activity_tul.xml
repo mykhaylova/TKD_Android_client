@@ -8,45 +8,44 @@
     android:background="@color/common_signin_btn_dark_text_disabled">
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:text="+0.2"
         android:id="@+id/btnRedPlusPoints"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:maxWidth="80dp"
         android:minHeight="80dp"
         android:background="@drawable/buttonblue"
         android:drawableTint="@drawable/abc_btn_borderless_material"
         android:textColor="#ffffff"
         android:layout_alignParentBottom="true"
-
-        />
+        android:layout_alignEnd="@+id/btnRedMinusPoints" />
 
     <Button
         android:id="@+id/btnRedMinusPoints"
-        android:layout_width="240dp"
-        android:layout_height="220dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_width="190dp"
+        android:layout_height="180dp"
         android:background="@drawable/buttonblue"
         android:maxWidth="80dp"
         android:minHeight="80dp"
         android:text="-0.2"
         android:textColor="#ffffff"
-        android:textSize="90sp" />
+        android:textSize="80sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 
     <Button
-        android:layout_width="240dp"
-        android:layout_height="220dp"
+        android:layout_width="190dp"
+        android:layout_height="180dp"
         android:text="-0.2"
         android:id="@+id/btnBlueMinusPoints"
-        android:textSize="90sp"
+        android:textSize="80sp"
         android:maxWidth="80dp"
         android:minHeight="80dp"
         android:background="@drawable/buttonred"
+        android:textColor="#ffffff"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:textColor="#ffffff" />
+        android:layout_alignParentEnd="true" />
     <!--
        <EditText
            android:layout_width="match_parent"
@@ -67,7 +66,7 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/etReferee"
-        android:background="@android:color/white"
+        android:background="@drawable/border_style"
         android:hint="Name"
         android:elegantTextHeight="true"
         android:textAlignment="center"
@@ -77,73 +76,71 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
         android:text="0"
         android:id="@+id/btnRedSetZero"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:maxWidth="80dp"
-        android:minHeight="80dp"
-        android:background="@drawable/buttonblue"
-        android:textColor="#ffffff"
-        android:layout_marginStart="9dp"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/btnRedPlusPoints" />
-
-    <Button
-        android:text="B"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnBackRed"
-        android:textSize="30sp"
-        android:maxWidth="10dp"
         android:minHeight="80dp"
         android:background="@drawable/buttonblue"
         android:textColor="#ffffff"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="5dp"
-        android:layout_toEndOf="@+id/btnRedSetZero"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+0.2"
-        android:id="@+id/btnBluePlusPoints"
-        android:maxWidth="80dp"
-        android:minHeight="80dp"
-        android:textSize="30sp"
-        android:background="@drawable/buttonred"
-        android:textColor="#ffffff"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:id="@+id/btnBlueSetZero"
-        android:textSize="30sp"
-        android:maxWidth="80dp"
-        android:minHeight="80dp"
-        android:background="@drawable/buttonred"
-        android:textColor="#ffffff"
-        android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/btnBluePlusPoints"
-        android:layout_marginEnd="11dp" />
+        android:layout_toEndOf="@+id/btnBackRed" />
 
     <Button
         android:text="B"
         android:layout_width="50dp"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
+        android:id="@+id/btnBackRed"
+        android:textSize="25sp"
+        android:maxWidth="10dp"
+        android:minHeight="80dp"
+        android:background="@drawable/buttonblue"
+        android:textColor="#ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:text="+0.2"
+        android:id="@+id/btnBluePlusPoints"
+        android:maxWidth="80dp"
+        android:minHeight="80dp"
+        android:textSize="25sp"
+        android:background="@drawable/buttonred"
+        android:textColor="#ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/btnBlueMinusPoints" />
+
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:text="0"
+        android:id="@+id/btnBlueSetZero"
+        android:textSize="25sp"
+        android:maxWidth="80dp"
+        android:minHeight="80dp"
+        android:background="@drawable/buttonred"
+        android:textColor="#ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@+id/btnBluePlusPoints" />
+
+    <Button
+        android:text="B"
+        android:layout_width="50dp"
+        android:layout_height="70dp"
         android:id="@+id/btnBackBlue"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:maxWidth="10dp"
         android:minHeight="80dp"
         android:background="@drawable/buttonred"
         android:textColor="#ffffff"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/btnBlueMinusPoints" />
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:id="@+id/btnMenu"
@@ -157,7 +154,8 @@
         android:minHeight="80dp"
         android:text="Menu"
         android:textColor="#ffffff"
-        android:textSize="30sp" />
+        android:textSize="28sp"
+        android:layout_alignTop="@+id/btnBackRed" />
 
     <Button
         android:text="Level 2"
@@ -167,7 +165,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:id="@+id/btnLevel1"
-        android:textSize="30sp"
+        android:textSize="28sp"
         android:maxWidth="80dp"
         android:minHeight="80dp"
         android:width="130dp"
