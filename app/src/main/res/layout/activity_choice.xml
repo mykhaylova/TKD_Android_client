@@ -43,11 +43,11 @@
         android:id="@+id/btnExit"
         android:layout_width="100dp"
         android:layout_height="70dp"
-        android:layout_below="@+id/btnTul"
-        android:layout_centerHorizontal="true"
         android:background="@drawable/buttonbluelight"
         android:onClick="clickExit"
         android:text="Back"
         android:textColor="#ffffff"
-        android:textSize="30dp" />
+        android:textSize="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

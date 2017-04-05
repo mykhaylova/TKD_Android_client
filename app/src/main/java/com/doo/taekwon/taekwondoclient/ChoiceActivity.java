@@ -51,10 +51,10 @@ public class ChoiceActivity extends AppCompatActivity {
         btnTul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent loginIntent = new Intent(ChoiceActivity.this, TulActivity.class);
-                loginIntent.putExtra("name", mName);
-                loginIntent.putExtra("ip", mIpAddress);
-                ChoiceActivity.this.startActivity(loginIntent);
+                Intent intentTul = new Intent(ChoiceActivity.this, TulActivity.class);
+                intentTul.putExtra("name", mName);
+                intentTul.putExtra("ip", mIpAddress);
+                ChoiceActivity.this.startActivity(intentTul);
                 vibe.vibrate(220);
             }
         });

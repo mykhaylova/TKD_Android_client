@@ -29,7 +29,7 @@ public class TulActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tul);
 
         Button send2ButtonMinus = (Button)findViewById(R.id.btnRedMinusPoints);
-        Button send1ButtonMinus = (Button)findViewById(R.id.btnBlueMinusPoints);
+        Button send1ButtonMinus = (Button)findViewById(R.id.btnRedPlusPointsPoints);  //fehler
         Button send2ButtonPlus = (Button)findViewById(R.id.btnRedPlusPoints);
         Button send1ButtonPlus = (Button)findViewById(R.id.btnBluePlusPoints);
         Button send1ButtonZero = (Button)findViewById(R.id.btnBlueSetZero);

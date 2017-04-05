@@ -16,7 +16,7 @@
         android:maxWidth="80dp"
         android:minHeight="80dp"
         android:background="@drawable/buttonblue"
-        android:drawableTint="@drawable/abc_btn_borderless_material"
+
         android:textColor="#ffffff"
         android:layout_alignParentBottom="true"
         android:layout_alignEnd="@+id/btnRedPlusPointsPoints" />
