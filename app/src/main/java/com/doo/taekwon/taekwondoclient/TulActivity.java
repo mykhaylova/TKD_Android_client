@@ -28,12 +28,12 @@ public class TulActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tul);
 
-        Button send2Button1Minus = (Button)findViewById(R.id.btnRedMinusPoints);
-        Button send1ButtonMinus = (Button)findViewById(R.id.btnRedMinusPoints);
+        Button send2ButtonMinus = (Button)findViewById(R.id.btnRedMinusPoints);
+        Button send1ButtonMinus = (Button)findViewById(R.id.btnBlueMinusPoints);
         Button send2ButtonPlus = (Button)findViewById(R.id.btnRedPlusPoints);
         Button send1ButtonPlus = (Button)findViewById(R.id.btnBluePlusPoints);
-        Button send2ButtonZero = (Button)findViewById(R.id.btnBlueSetZero);
-        Button send1ButtonZero = (Button)findViewById(R.id.btnRedSetZero);
+        Button send1ButtonZero = (Button)findViewById(R.id.btnBlueSetZero);
+        Button send2ButtonZero = (Button)findViewById(R.id.btnRedSetZero);
         Button buttonMenu = (Button)findViewById(R.id.btnMenu);
         Button buttonBackRed = (Button)findViewById(R.id.btnBackRed);
         Button buttonBackBlue = (Button)findViewById(R.id.btnBackBlue);
@@ -55,16 +55,16 @@ public class TulActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 PointsSender sender = new PointsSender();
-                sender.execute(mLevel, mName, "fighter2", "-0.2");
+                sender.execute(mLevel, mName, "fighter1", "-0.2");
                 vibe.vibrate(100);
             }
         });
 
-        send2Button1Minus.setOnClickListener(new View.OnClickListener() {
+        send2ButtonMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PointsSender sender = new PointsSender();
-                sender.execute(mLevel, mName, "fighter1", "-0.2");
+                sender.execute(mLevel, mName, "fighter2", "-0.2");
                 vibe.vibrate(100);
             }
         });
@@ -73,7 +73,7 @@ public class TulActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 PointsSender sender = new PointsSender();
-                sender.execute(mLevel, mName, "fighter2", "0.2");
+                sender.execute(mLevel, mName, "fighter1", "0.2");
                 vibe.vibrate(160);
             }
         });
@@ -82,7 +82,7 @@ public class TulActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 PointsSender sender = new PointsSender();
-                sender.execute(mLevel, mName, "fighter1", "0.2");
+                sender.execute(mLevel, mName, "fighter2", "0.2");
                 vibe.vibrate(160);
             }
         });
@@ -91,7 +91,7 @@ public class TulActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 PointsSender sender = new PointsSender();
-                sender.execute(mLevel, mName, "fighter2", "0");
+                sender.execute(mLevel, mName, "fighter1", "0");
                 vibe.vibrate(200);
             }
         });
@@ -100,7 +100,7 @@ public class TulActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 PointsSender sender = new PointsSender();
-                sender.execute(mLevel, mName, "fighter1", "0");
+                sender.execute(mLevel, mName, "fighter2", "0");
                 vibe.vibrate(200);
             }
         });
@@ -109,7 +109,7 @@ public class TulActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 PointsSender sender = new PointsSender();
-                sender.execute(mLevel, mName, "fighter2", "10");
+                sender.execute(mLevel, mName, "fighter1", "10");
                 vibe.vibrate(200);
             }
         });
@@ -118,7 +118,7 @@ public class TulActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 PointsSender sender = new PointsSender();
-                sender.execute(mLevel, mName, "fighter1", "10");
+                sender.execute(mLevel, mName, "fighter2", "10");
                 vibe.vibrate(200);
             }
         });
