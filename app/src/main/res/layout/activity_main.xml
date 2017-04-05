@@ -80,7 +80,7 @@
         android:layout_width="90dp"
         android:layout_height="70dp"
         android:text="-1"
-        android:id="@+id/btnRedPlusPoints"
+        android:id="@+id/btnBluePlusPoints"
         android:textSize="50sp"
         android:maxWidth="80dp"
         android:minHeight="80dp"

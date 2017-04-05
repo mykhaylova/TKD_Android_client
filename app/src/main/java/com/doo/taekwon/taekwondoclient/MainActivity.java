@@ -10,9 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -32,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         Button send2Button1Point = (Button)findViewById(R.id.btnBluePlusOne);
         Button send1Button1Point = (Button)findViewById(R.id.btnRedSetZero);
         Button send2ButtonMinusPoint = (Button)findViewById(R.id.btnBlueSetZero);
-        Button send1ButtonMinusPoint = (Button)findViewById(R.id.btnRedPlusPoints);
+        Button send1ButtonMinusPoint = (Button)findViewById(R.id.btnBluePlusPoints);
         Button buttonMenu = (Button) findViewById(R.id.btnMenu);
 
         final TextView etName = (TextView)findViewById(R.id.etReferee);
@@ -50,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 PointsSender sender = new PointsSender();
-                sender.execute(mName, "fighter1", "1");
-                vibe.vibrate(160);
+                sender.execute(mName, "fighter2", "1");
+                vibe.vibrate(100);
             }
         });
 
@@ -59,21 +57,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 PointsSender sender = new PointsSender();
-                sender.execute(mName, "fighter2", "1");
-                vibe.vibrate(160);
+                sender.execute(mName, "fighter1", "1");
+                vibe.vibrate(100);
             }
         });
 
         send1ButtonMinusPoint.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PointsSender sender = new PointsSender();
-                sender.execute(mName, "fighter1", "-1");
-                vibe.vibrate(160);
-            }
-        });
-
-        send2ButtonMinusPoint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PointsSender sender = new PointsSender();
@@ -82,47 +71,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        send2ButtonMinusPoint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PointsSender sender = new PointsSender();
+                sender.execute(mName, "fighter1", "-1");
+                vibe.vibrate(160);
+            }
+        });
+
         buttonMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent activityIntent = new Intent(MainActivity.this, ChoiceActivity.class);
-                //activityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                //startActivity(activityIntent);
                 finish();
                 vibe.vibrate(220);
             }
         });
-    }
-
-    private class PointsReader extends AsyncTask<Void, Void, Void>
-    {
-        @Override
-        protected Void doInBackground(Void... v) {
-            URL serverUrl = null;
-            HttpURLConnection connection = null;
-            StringBuilder sb = new StringBuilder();
-            try {
-                //creating the connection to the http server
-                serverUrl = new URL("http://" + mServerIP + ":" + mServerPort + "/count");
-                connection = (HttpURLConnection) serverUrl.openConnection();
-                connection.setRequestMethod("GET");
-                BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream(), "UTF-8"));
-                String line = null;
-                while ((line = br.readLine()) != null) {
-                    sb.append(line + "\n");
-                }
-                br.close();
-                connection.disconnect();
-                Log.d("GET", sb.toString());
-            } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
-        e.printStackTrace();
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-        return null;
-        }
     }
 
     private class PointsSender extends AsyncTask<String, Void, Void>

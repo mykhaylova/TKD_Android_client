@@ -15,7 +15,7 @@
         android:layout_width="90dp"
         android:layout_height="70dp"
         android:text="+0.5"
-        android:id="@+id/btnRedPlusPoints"
+        android:id="@+id/btnBluePlusPoints"
         android:textSize="30sp"
         android:maxWidth="80dp"
         android:minHeight="80dp"
@@ -25,13 +25,13 @@
         android:textColor="#ffffff"
 
         android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/btnF2set0" />
+        android:layout_alignEnd="@+id/btnBlueMinusPoints" />
 
     <Button
         android:layout_width="190dp"
         android:layout_height="180dp"
         android:text="-0.5"
-        android:id="@+id/btnF2set0"
+        android:id="@+id/btnBlueMinusPoints"
         android:textSize="80sp"
         android:maxWidth="80dp"
         android:minHeight="80dp"
@@ -59,7 +59,7 @@
         android:layout_width="90dp"
         android:layout_height="70dp"
         android:text="+0.5"
-        android:id="@+id/btnBluePlusPoints"
+        android:id="@+id/btnRedPlusPoints"
         android:maxWidth="80dp"
         android:minHeight="80dp"
         android:textSize="30sp"
@@ -67,7 +67,7 @@
         android:background="@drawable/buttonred"
         android:textColor="#ffffff"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/btnBlueMinusPoints" />
+        android:layout_alignStart="@+id/btnRedMinusPoints" />
 
     <Button
         android:text="Level 2"
@@ -82,10 +82,10 @@
         android:background="@drawable/buttonbluelight"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_alignTop="@+id/btnRedPlusPoints" />
+        android:layout_alignTop="@+id/btnBluePlusPoints" />
 
     <Button
-        android:id="@+id/btnFertig"
+        android:id="@+id/btnFinish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/btnLevel2"
@@ -103,7 +103,7 @@
         android:layout_width="190dp"
         android:layout_height="180dp"
         android:text="-0.5"
-        android:id="@+id/btnBlueMinusPoints"
+        android:id="@+id/btnRedMinusPoints"
         android:textSize="80sp"
         android:maxWidth="80dp"
         android:minHeight="80dp"

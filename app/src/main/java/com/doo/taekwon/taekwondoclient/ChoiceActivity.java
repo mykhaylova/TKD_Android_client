@@ -2,7 +2,6 @@ package com.doo.taekwon.taekwondoclient;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -32,11 +31,20 @@ public class ChoiceActivity extends AppCompatActivity {
         btnSparring.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent loginIntent = new Intent(ChoiceActivity.this, MainActivity.class);
-                loginIntent.putExtra("name", mName);
-                loginIntent.putExtra("ip", mIpAddress);
-                ChoiceActivity.this.startActivity(loginIntent);
-                vibe.vibrate(220);
+                if (!mName.equals("referee5")) {
+                    Intent loginIntent = new Intent(ChoiceActivity.this, MainActivity.class);
+                    loginIntent.putExtra("name", mName);
+                    loginIntent.putExtra("ip", mIpAddress);
+                    ChoiceActivity.this.startActivity(loginIntent);
+                    vibe.vibrate(220);
+                } else
+                {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(ChoiceActivity.this);
+                    builder.setMessage("Wrong referee ID! Please register with the ID 1 till 4!")
+                            .setNegativeButton("Retry", null)
+                            .create()
+                            .show();
+                }
             }
         });
 
@@ -52,23 +60,8 @@ public class ChoiceActivity extends AppCompatActivity {
         });
     }
     public void clickExit(View v){
-        //onBackPressed();
         finish();
         final Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         vibe.vibrate(220);
     }
-    /*
-    @Override
-    public void onBackPressed() {
-        new AlertDialog.Builder(this)
-                .setMessage("Are you sure you want to exit?")
-                .setCancelable(false)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                    ChoiceActivity.this.finish();
-                    }
-                })
-                .setNegativeButton("No", null)
-                .show();
-    }  */
 }
